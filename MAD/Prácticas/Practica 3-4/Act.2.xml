@@ -1,0 +1,100 @@
+<?xml version="1.0" standalone="yes" ?>
+<grafo>
+<tipoGrafo> "0" </tipoGrafo>
+<nodos><nodo>
+<nombre> "v1" </nombre>
+<posicion> (548,287) </posicion>
+</nodo>
+<nodo>
+<nombre> "v2" </nombre>
+<posicion> (631,245) </posicion>
+</nodo>
+<nodo>
+<nombre> "v3" </nombre>
+<posicion> (630,362) </posicion>
+</nodo>
+<nodo>
+<nombre> "v4" </nombre>
+<posicion> (712,305) </posicion>
+</nodo>
+<nodo>
+<nombre> "v5" </nombre>
+<posicion> (784,248) </posicion>
+</nodo>
+<nodo>
+<nombre> "v6" </nombre>
+<posicion> (783,361) </posicion>
+</nodo>
+<nodo>
+<nombre> "v7" </nombre>
+<posicion> (859,295) </posicion>
+</nodo>
+</nodos>
+<aristas><arista>
+<nodo1> "0" </nodo1>
+<nodo2> "1" </nodo2>
+<peso> "30.0" </peso>
+<tipo> "0" </tipo>
+</arista>
+<arista>
+<nodo1> "0" </nodo1>
+<nodo2> "2" </nodo2>
+<peso> "50.0" </peso>
+<tipo> "0" </tipo>
+</arista>
+<arista>
+<nodo1> "1" </nodo1>
+<nodo2> "2" </nodo2>
+<peso> "19.0" </peso>
+<tipo> "0" </tipo>
+</arista>
+<arista>
+<nodo1> "1" </nodo1>
+<nodo2> "3" </nodo2>
+<peso> "6.0" </peso>
+<tipo> "0" </tipo>
+</arista>
+<arista>
+<nodo1> "1" </nodo1>
+<nodo2> "4" </nodo2>
+<peso> "40.0" </peso>
+<tipo> "0" </tipo>
+</arista>
+<arista>
+<nodo1> "2" </nodo1>
+<nodo2> "3" </nodo2>
+<peso> "12.0" </peso>
+<tipo> "0" </tipo>
+</arista>
+<arista>
+<nodo1> "2" </nodo1>
+<nodo2> "5" </nodo2>
+<peso> "10.0" </peso>
+<tipo> "0" </tipo>
+</arista>
+<arista>
+<nodo1> "3" </nodo1>
+<nodo2> "4" </nodo2>
+<peso> "35.0" </peso>
+<tipo> "0" </tipo>
+</arista>
+<arista>
+<nodo1> "3" </nodo1>
+<nodo2> "5" </nodo2>
+<peso> "23.0" </peso>
+<tipo> "0" </tipo>
+</arista>
+<arista>
+<nodo1> "4" </nodo1>
+<nodo2> "6" </nodo2>
+<peso> "8.0" </peso>
+<tipo> "0" </tipo>
+</arista>
+<arista>
+<nodo1> "5" </nodo1>
+<nodo2> "6" </nodo2>
+<peso> "20.0" </peso>
+<tipo> "0" </tipo>
+</arista>
+</aristas> 
+ </grafo>
