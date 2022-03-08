@@ -1,0 +1,540 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     21427,        532]
+NotebookOptionsPosition[     18667,        482]
+NotebookOutlinePosition[     19370,        505]
+CellTagsIndexPosition[     19327,        502]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["M\[CapitalEAcute]TODOS DE INTEGRACI\[CapitalOAcute]N \
+NUM\[CapitalEAcute]RICA: TRAPECIOS Y SIMPSON",
+ FontSize->24]], "Title",
+ CellChangeTimes->{{3.707922388479266*^9, 3.707922391435853*^9}, {
+   3.7083267799345703`*^9, 3.708326784258091*^9}, {3.8140151798093233`*^9, 
+   3.8140151811040897`*^9}, 
+   3.814015823629163*^9},ExpressionUUID->"aa91c77d-3c92-4a2b-9580-\
+5c5bfbfcb743"],
+
+Cell[TextData[{
+ StyleBox["\n",
+  FontFamily->"Baskerville",
+  FontSize->18,
+  FontWeight->"Regular",
+  FontColor->RGBColor[0., 0., 0.4258793011367971]],
+ StyleBox["M\[CapitalEAcute]TODO DE LOS TRAPECIOS",
+  FontFamily->"Baskerville",
+  FontSize->18,
+  FontWeight->"Regular",
+  FontColor->RGBColor[0., 0., 0.8028229190508889]]
+}], "Text",
+ CellChangeTimes->{{3.8140161868992863`*^9, 3.8140161931651993`*^9}, 
+   3.814016546950059*^9, {3.814016705730785*^9, 
+   3.8140167140335913`*^9}},ExpressionUUID->"fd8558bd-764a-4659-8f47-\
+3f2a56917e54"],
+
+Cell[TextData[{
+ StyleBox["\[FilledSmallSquare] Trapecios[f, {a, b, n}]",
+  FontFamily->"Optima",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0., 0.5991302357518883]],
+ StyleBox[" aplica el m\[EAcute]todo de los Trapecios para calcular la \
+aproximaci\[OAcute]n de la integral definida de la funci\[OAcute]n f y \
+extremos de integraci\[OAcute]n a y b, ",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0., 0., 0.5991302357518883]],
+ StyleBox["con n subdivisiones",
+  FontFamily->"Optima",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0., 0., 0.5991302357518883]],
+ StyleBox[". El valor calculado tiene 20 cifras significativas (aunque no \
+todas se corresponden con el valor exacto de la integral!). La definici\
+\[OAcute]n de la funci\[OAcute]n Trapecios es:",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0., 0., 0.5991302357518883]]
+}], "Text",
+ CellChangeTimes->{
+  3.707820871944002*^9, {3.7078232288117228`*^9, 3.707823347443008*^9}, {
+   3.707823647719451*^9, 3.707823658024583*^9}, {3.707824288504476*^9, 
+   3.7078242897710752`*^9}, {3.708326826430438*^9, 3.708326829167347*^9}, {
+   3.708341572450679*^9, 3.708341573494708*^9}, {3.814015326467493*^9, 
+   3.814015327951528*^9}, {3.814015916087378*^9, 3.8140159443135138`*^9}, {
+   3.814015989426998*^9, 3.814016046127138*^9}, 3.81401633438943*^9, {
+   3.814016664197266*^9, 3.814016701264614*^9}, 3.814016832205081*^9, {
+   3.8141764775991383`*^9, 3.814176614458489*^9}, {3.814176654913547*^9, 
+   3.814176739851286*^9}, {3.814196933954734*^9, 3.8141969517201357`*^9}, {
+   3.814197102323966*^9, 3.814197152769207*^9}, {3.81419718487763*^9, 
+   3.814197205194729*^9}, 3.8145049079042253`*^9, {3.8145076243048477`*^9, 
+   3.8145076579538317`*^9}, 
+   3.814507711898033*^9},ExpressionUUID->"bc57c2f4-3681-4f55-a46d-\
+9e9f412091c5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Trapecios", "[", 
+   RowBox[{"f_", ",", 
+    RowBox[{"{", 
+     RowBox[{"a_", ",", "b_", ",", "n_"}], "}"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "h", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"h", "=", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"b", "-", "a"}], ")"}], "/", "n"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"N", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"f", "[", "a", "]"}], "+", 
+          RowBox[{"2", "*", 
+           RowBox[{"Sum", "[", 
+            RowBox[{
+             RowBox[{"f", "[", 
+              RowBox[{"a", "+", 
+               RowBox[{"k", "*", "h"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"k", ",", "1", ",", 
+               RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "+", 
+          RowBox[{"f", "[", "b", "]"}]}], ")"}], "*", 
+        RowBox[{"h", "/", "2"}]}], ",", "20"}], "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.707820401307955*^9, 3.707820404800664*^9}, {
+  3.707820471740385*^9, 3.707820594334234*^9}, {3.707820754030279*^9, 
+  3.7078207599694853`*^9}, {3.7078208122151012`*^9, 3.707820812507513*^9}, {
+  3.707820846167633*^9, 3.707820860218853*^9}, {3.737260524954982*^9, 
+  3.7372605374957323`*^9}, {3.737260569035542*^9, 3.737260594773122*^9}, {
+  3.814176535179826*^9, 3.814176538858727*^9}, {3.8145047544524803`*^9, 
+  3.81450480040024*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellLabel->"In[1]:=",ExpressionUUID->"53c47b15-ad0f-4da3-a28f-568f11da8e01"],
+
+Cell[TextData[StyleBox["EJEMPLO :",
+ FontFamily->"Roboto",
+ FontWeight->"Regular",
+ FontColor->RGBColor[
+  0.7459983215075914, 0.2686503395132372, 0.9976348516060121]]], "Text",
+ CellChangeTimes->{{3.7078233550425653`*^9, 3.707823361538578*^9}, {
+   3.708326838169683*^9, 3.708326840446847*^9}, {3.8140156376128283`*^9, 
+   3.814015641077231*^9}, 
+   3.814016388785172*^9},ExpressionUUID->"4641afb7-49ed-4e0d-ac40-\
+a3ce2457cf07"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], "=", 
+  RowBox[{"E", "^", 
+   RowBox[{"(", 
+    RowBox[{"-", 
+     RowBox[{"x", "^", "2"}]}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.707820642140584*^9, 3.707820656972177*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"20e28f59-74cd-49e6-b834-8072061f035b"],
+
+Cell[BoxData[
+ SuperscriptBox["\[ExponentialE]", 
+  RowBox[{"-", 
+   SuperscriptBox["x", "2"]}]]], "Output",
+ CellChangeTimes->{
+  3.7078206605839577`*^9, 3.707823785226686*^9, 3.737260605347795*^9, {
+   3.81419655387344*^9, 3.814196602395886*^9}, 3.814197402254594*^9, 
+   3.814197998101585*^9, {3.814504846267742*^9, 3.814504862047536*^9}, 
+   3.814505066829186*^9, {3.8145075748029623`*^9, 3.814507588130501*^9}},
+ CellLabel->"Out[2]=",ExpressionUUID->"92417ccb-b59e-4f1f-8d1e-bc1db78dec36"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Trapecios", "[", 
+  RowBox[{"f", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7078206693999357`*^9, 3.7078207369715652`*^9}, {
+  3.814176796462551*^9, 3.814176807206468*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"959c3284-5efb-45fc-a253-bec7d937d81a"],
+
+Cell[BoxData["0.74621079613174936351825986280597371116`20."], "Output",
+ CellChangeTimes->{
+  3.814197998141253*^9, {3.814504846280788*^9, 3.8145048620602503`*^9}, 
+   3.8145050668410807`*^9, {3.81450757481491*^9, 3.814507588144084*^9}},
+ CellLabel->"Out[3]=",ExpressionUUID->"5c1f28df-3872-4b08-9d81-de7cbfecfe7a"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["\[FilledSmallSquare] CotaTrapecios[a, b, n, M2]",
+  FontFamily->"Optima",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]],
+ StyleBox[" calcula la cota del error cometido en la aproximaci\[OAcute]n \
+anterior por Trapecios. La definici\[OAcute]n es: ",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]]
+}], "Text",
+ CellChangeTimes->{{3.8141941150646133`*^9, 3.814194119086247*^9}, {
+   3.814194153208992*^9, 3.814194192595294*^9}, {3.8141943596886663`*^9, 
+   3.81419443236268*^9}, 3.814194830941938*^9, {3.814194870644298*^9, 
+   3.814194882416074*^9}, {3.814195144787405*^9, 3.814195422291608*^9}, {
+   3.814196811193532*^9, 3.8141969251706543`*^9}, {3.814197636536701*^9, 
+   3.8141976534432573`*^9}, {3.814197692480455*^9, 3.814197705001614*^9}, {
+   3.8141977462781153`*^9, 3.8141977499459257`*^9}, {3.814504914678419*^9, 
+   3.814504933205206*^9}},ExpressionUUID->"46982baf-0467-4434-9c32-\
+46530426549b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CotaTrapecios", "[", 
+   RowBox[{"a_", ",", "b_", ",", "n_", ",", "M2_"}], "]"}], ":=", 
+  RowBox[{"N", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"b", "-", "a"}], ")"}], "^", "3"}], "*", "M2"}], ")"}], "/", 
+     
+     RowBox[{"(", 
+      RowBox[{"12", 
+       RowBox[{"n", "^", "2"}]}], ")"}]}], ",", "20"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8140162988673677`*^9, 3.814016304012302*^9}, 
+   3.814194090514824*^9, {3.814194122597107*^9, 3.814194123541263*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellLabel->"In[4]:=",ExpressionUUID->"1a69c43f-91ed-4aff-a332-d837d97ea53b"],
+
+Cell[TextData[{
+ StyleBox["Recuerda que ",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]],
+ StyleBox["M2",
+  FontFamily->"Optima",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]],
+ StyleBox[" es una cota superior del valor absoluto de la derivada ",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]],
+ StyleBox["segunda",
+  FontFamily->"Optima",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]],
+ StyleBox[" de f en [a,b] (se puede estimar gr\[AAcute]ficamente).",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]]
+}], "Text",
+ CellChangeTimes->{{3.814196735214222*^9, 3.8141968032060423`*^9}, {
+  3.814196881101659*^9, 3.81419689200299*^9}, {3.814197305624316*^9, 
+  3.814197308447958*^9}, {3.814197606215657*^9, 3.814197628569955*^9}, {
+  3.814197681163105*^9, 3.8141976882502604`*^9}, {3.814197979178309*^9, 
+  3.814197979507111*^9}},ExpressionUUID->"282d68ef-a00e-42ad-821a-\
+5d05f77382a8"],
+
+Cell[BoxData[""], "Input",
+ CellFrame->{{0, 0}, {2, 0}},
+ CellChangeTimes->{{3.814505080824191*^9, 3.8145050881100483`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"d0c09628-e35d-41dd-aa81-3f90aee344fb"],
+
+Cell[TextData[StyleBox["M\[CapitalEAcute]TODO DE SIMPSON",
+ FontFamily->"Baskerville",
+ FontSize->18,
+ FontWeight->"Regular",
+ FontColor->RGBColor[0., 0., 0.7229877164873731]]], "Text",
+ CellChangeTimes->{{3.8140161868992863`*^9, 3.8140161931651993`*^9}, 
+   3.814016546950059*^9},ExpressionUUID->"592c86d1-2cae-477c-a5b6-\
+cc301f8704b0"],
+
+Cell[TextData[{
+ StyleBox["\[FilledSmallSquare] Simpson[f, {a, b, n}]",
+  FontFamily->"Optima",
+  FontWeight->"Bold",
+  FontColor->RGBColor[
+   0.04538033112077516, 0.11334401464866102`, 0.5667200732433051]],
+ StyleBox[" aplica el m\[EAcute]todo del Simpson para calcular la aproximaci\
+\[OAcute]n de la integral definida de la funci\[OAcute]n f y extremos de \
+integraci\[OAcute]n a y b, ",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[
+   0.04538033112077516, 0.11334401464866102`, 0.5667200732433051]],
+ StyleBox["con n subdivisiones",
+  FontFamily->"Optima",
+  FontWeight->"Bold",
+  FontColor->RGBColor[
+   0.04538033112077516, 0.11334401464866102`, 0.5667200732433051]],
+ StyleBox[". El valor calculado tiene 20 cifras significativas (aunque no \
+todas se corresponden con el valor exacto de la integral!). ",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[
+   0.04538033112077516, 0.11334401464866102`, 0.5667200732433051]],
+ StyleBox["Recuerda que",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0.9688410772869459, 0., 0.04487678339818418]],
+ StyleBox[" ",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[
+   0.04538033112077516, 0.11334401464866102`, 0.5667200732433051]],
+ StyleBox["n tiene que ser ",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0.9688410772869459, 0., 0.04487678339818418]],
+ StyleBox["PAR",
+  FontFamily->"Optima",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.9688410772869459, 0., 0.04487678339818418]],
+ StyleBox["!",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0.9688410772869459, 0., 0.04487678339818418]],
+ StyleBox[". La definici\[OAcute]n de la funci\[OAcute]n Simpson es:",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0., 0., 0.5991302357518883]]
+}], "Text",
+ CellChangeTimes->{{3.707823374017427*^9, 3.707823374228221*^9}, {
+   3.70782361575111*^9, 3.707823622102992*^9}, {3.7078236650487003`*^9, 
+   3.7078236889055347`*^9}, {3.708326847278397*^9, 3.708326851908051*^9}, 
+   3.814016432784399*^9, 3.814016600351568*^9, 3.814016768566688*^9, {
+   3.814016825218411*^9, 3.81401682635468*^9}, {3.8141768906290293`*^9, 
+   3.8141769425223637`*^9}, {3.814177009120482*^9, 3.814177113996463*^9}, {
+   3.814197242199704*^9, 3.814197249869021*^9}, 3.814197910766755*^9, 
+   3.814505025565364*^9, {3.8145076899059353`*^9, 
+   3.814507698782117*^9}},ExpressionUUID->"39bed20b-1b7d-45bd-813f-\
+65a9701b157d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Simpson", "[", 
+   RowBox[{"f_", ",", 
+    RowBox[{"{", 
+     RowBox[{"a_", ",", "b_", ",", "n_"}], "}"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "h", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"h", "=", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"b", "-", "a"}], ")"}], "/", "n"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"N", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"f", "[", "a", "]"}], "+", 
+          RowBox[{"4", "*", 
+           RowBox[{"Sum", "[", 
+            RowBox[{
+             RowBox[{"f", "[", 
+              RowBox[{"a", "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"2", "*", "k"}], "+", "1"}], ")"}], "*", "h"}]}], 
+              "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"k", ",", "0", ",", 
+               RowBox[{
+                RowBox[{"n", "/", "2"}], "-", "1"}]}], "}"}]}], "]"}]}], "+", 
+          
+          RowBox[{"2", "*", 
+           RowBox[{"Sum", "[", 
+            RowBox[{
+             RowBox[{"f", "[", 
+              RowBox[{"a", "+", 
+               RowBox[{"2", "*", "k", "*", "h"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"k", ",", "1", ",", 
+               RowBox[{
+                RowBox[{"n", "/", "2"}], "-", "1"}]}], "}"}]}], "]"}]}], "+", 
+          
+          RowBox[{"f", "[", "b", "]"}]}], ")"}], "*", 
+        RowBox[{"h", "/", "3"}]}], ",", "20"}], "]"}]}]}], " ", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.70782338855434*^9, 3.7078233910055847`*^9}, {
+   3.707823467170136*^9, 3.70782354390441*^9}, 3.707823597548668*^9, {
+   3.7078239106166573`*^9, 3.7078239110869913`*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellLabel->"In[6]:=",ExpressionUUID->"0ebfa566-39cd-474f-ac1c-838064090501"],
+
+Cell[TextData[StyleBox["EJEMPLO :",
+ FontFamily->"Roboto",
+ FontWeight->"Regular",
+ FontColor->RGBColor[
+  0.7459983215075914, 0.2686503395132372, 0.9976348516060121]]], "Text",
+ CellChangeTimes->{{3.7078233550425653`*^9, 3.707823361538578*^9}, {
+   3.708326838169683*^9, 3.708326840446847*^9}, {3.8140156376128283`*^9, 
+   3.814015641077231*^9}, 
+   3.814016388785172*^9},ExpressionUUID->"a414271c-a6f1-4864-99d6-\
+067714b9dc39"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simpson", "[", 
+  RowBox[{"f", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.707823714309333*^9, 3.707823717851458*^9}, {
+  3.7078239489179907`*^9, 3.70782395508202*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"fb2dd51c-eb1d-40c0-840a-264d46792da9"],
+
+Cell[BoxData["0.74682494825444346314793692172283069542`20."], "Output",
+ CellChangeTimes->{{3.81450505006409*^9, 3.8145050669071007`*^9}, {
+  3.8145075749077473`*^9, 3.814507588223398*^9}},
+ CellLabel->"Out[7]=",ExpressionUUID->"669523f6-8f1e-45f6-a6b9-d5ffa3d5062e"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["\[FilledSmallSquare] CotaSimpson[a, b, n, M4]",
+  FontFamily->"Optima",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]],
+ StyleBox[" calcula la cota del error cometido en la aproximaci\[OAcute]n \
+anterior por Simpson. La definici\[OAcute]n es:",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]]
+}], "Text",
+ CellChangeTimes->{{3.814196735214222*^9, 3.8141968032060423`*^9}, {
+   3.814196881101659*^9, 3.81419689200299*^9}, {3.814197318766252*^9, 
+   3.814197346270968*^9}, {3.81419755249953*^9, 3.814197552867887*^9}, 
+   3.8141975934470987`*^9, 
+   3.814505031364752*^9},ExpressionUUID->"b469fa18-f2b8-4432-914b-\
+086b9bf175ef"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CotaSimpson", "[", 
+   RowBox[{"a_", ",", "b_", ",", "n_", ",", "M4_"}], "]"}], ":=", 
+  RowBox[{"N", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"b", "-", "a"}], ")"}], "^", "5"}], "*", "M4"}], ")"}], "/", 
+     
+     RowBox[{"(", 
+      RowBox[{"180", 
+       RowBox[{"n", "^", "4"}]}], ")"}]}], ",", "20"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8140162988673677`*^9, 3.814016304012302*^9}, 
+   3.814194090514824*^9, {3.814194122597107*^9, 3.814194123541263*^9}, {
+   3.814197279257854*^9, 3.814197285734741*^9}, {3.814197554784347*^9, 
+   3.8141975762125807`*^9}},
+ Background->RGBColor[0.87, 0.94, 1],
+ CellLabel->"In[8]:=",ExpressionUUID->"685d4a06-a70c-4df4-98ed-a5a28c9b3aa0"],
+
+Cell[TextData[{
+ StyleBox["Recuerda que ",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]],
+ StyleBox["M4",
+  FontFamily->"Optima",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]],
+ StyleBox[" es una cota superior del valor absoluto de la derivada ",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]],
+ StyleBox["cuarta",
+  FontFamily->"Optima",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]],
+ StyleBox[" de f en [a,b] (se puede estimar gr\[AAcute]ficamente).",
+  FontFamily->"Optima",
+  FontWeight->"Regular",
+  FontColor->RGBColor[0.0554360265506981, 0., 0.5934843976501106]]
+}], "Text",
+ CellChangeTimes->{{3.814196735214222*^9, 3.8141968032060423`*^9}, {
+  3.814196881101659*^9, 3.81419689200299*^9}, {3.814197305624316*^9, 
+  3.814197308447958*^9}, {3.814197606215657*^9, 3.814197628569955*^9}, {
+  3.814197932188621*^9, 
+  3.814197960750269*^9}},ExpressionUUID->"2787f51f-7486-4a8e-a902-\
+0329a694eb0a"]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1047, 808},
+WindowMargins->{{13, Automatic}, {Automatic, 3}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+TaggingRules->{
+ "WelcomeScreenSettings" -> {"FEStarting" -> False}, 
+  "PresenterSettings" -> {"Dialogs" -> {}}},
+Magnification->1.5,
+FrontEndVersion->"12.1 para Mac OS X x86 (64-bit) (March 18, 2020)",
+StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Sky.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"9b010c06-1f62-448a-b521-8af059307c58"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 406, 7, 181, "Title",ExpressionUUID->"aa91c77d-3c92-4a2b-9580-5c5bfbfcb743"],
+Cell[988, 31, 543, 15, 91, "Text",ExpressionUUID->"fd8558bd-764a-4659-8f47-3f2a56917e54"],
+Cell[1534, 48, 1843, 36, 140, "Text",ExpressionUUID->"bc57c2f4-3681-4f55-a46d-9e9f412091c5"],
+Cell[3380, 86, 1604, 40, 175, "Input",ExpressionUUID->"53c47b15-ad0f-4da3-a28f-568f11da8e01"],
+Cell[4987, 128, 430, 9, 48, "Text",ExpressionUUID->"4641afb7-49ed-4e0d-ac40-a3ce2457cf07"],
+Cell[CellGroupData[{
+Cell[5442, 141, 315, 8, 66, "Input",ExpressionUUID->"20e28f59-74cd-49e6-b834-8072061f035b"],
+Cell[5760, 151, 494, 9, 57, "Output",ExpressionUUID->"92417ccb-b59e-4f1f-8d1e-bc1db78dec36"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6291, 165, 342, 7, 46, "Input",ExpressionUUID->"959c3284-5efb-45fc-a253-bec7d937d81a"],
+Cell[6636, 174, 315, 4, 52, "Output",ExpressionUUID->"5c1f28df-3872-4b08-9d81-de7cbfecfe7a"]
+}, Open  ]],
+Cell[6966, 181, 1045, 19, 79, "Text",ExpressionUUID->"46982baf-0467-4434-9c32-46530426549b"],
+Cell[8014, 202, 697, 19, 90, "Input",ExpressionUUID->"1a69c43f-91ed-4aff-a332-d837d97ea53b"],
+Cell[8714, 223, 1176, 27, 79, "Text",ExpressionUUID->"282d68ef-a00e-42ad-821a-5d05f77382a8"],
+Cell[9893, 252, 202, 3, 61, "Input",ExpressionUUID->"d0c09628-e35d-41dd-aa81-3f90aee344fb"],
+Cell[10098, 257, 338, 7, 54, "Text",ExpressionUUID->"592c86d1-2cae-477c-a5b6-cc301f8704b0"],
+Cell[10439, 266, 2516, 59, 140, "Text",ExpressionUUID->"39bed20b-1b7d-45bd-813f-65a9701b157d"],
+Cell[12958, 327, 1917, 54, 283, "Input",ExpressionUUID->"0ebfa566-39cd-474f-ac1c-838064090501"],
+Cell[14878, 383, 430, 9, 48, "Text",ExpressionUUID->"a414271c-a6f1-4864-99d6-067714b9dc39"],
+Cell[CellGroupData[{
+Cell[15333, 396, 337, 7, 46, "Input",ExpressionUUID->"fb2dd51c-eb1d-40c0-840a-264d46792da9"],
+Cell[15673, 405, 267, 3, 52, "Output",ExpressionUUID->"669523f6-8f1e-45f6-a6b9-d5ffa3d5062e"]
+}, Open  ]],
+Cell[15955, 411, 765, 16, 79, "Text",ExpressionUUID->"b469fa18-f2b8-4432-914b-086b9bf175ef"],
+Cell[16723, 429, 798, 21, 90, "Input",ExpressionUUID->"685d4a06-a70c-4df4-98ed-a5a28c9b3aa0"],
+Cell[17524, 452, 1127, 27, 79, "Text",ExpressionUUID->"2787f51f-7486-4a8e-a902-0329a694eb0a"]
+}, Open  ]]
+}
+]
+*)
+

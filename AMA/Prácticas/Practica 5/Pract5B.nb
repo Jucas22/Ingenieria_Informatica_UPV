@@ -1,0 +1,301 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8755,        293]
+NotebookOptionsPosition[      7568,        248]
+NotebookOutlinePosition[      7943,        264]
+CellTagsIndexPosition[      7900,        261]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["EJERCICIO 1", "Text",
+ CellChangeTimes->{{3.846661268673222*^9, 3.846661280905295*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"G", "[", "n", "]"}], ",", 
+   RowBox[{"n", "\[Rule]", " ", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.846661284123129*^9, 3.846661367499338*^9}, {
+  3.8466613998723917`*^9, 3.846661427440855*^9}, {3.8466615186425877`*^9, 
+  3.8466615391349506`*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{{3.8466615144624996`*^9, 3.846661540302243*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"G", "[", "n_", "]"}], ":=", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    FractionBox[
+     RowBox[{"n", "+", "1"}], 
+     RowBox[{"n", "-", 
+      SqrtBox["n"]}]], ")"}], 
+   RowBox[{
+    SqrtBox[
+     RowBox[{"n", "+", "2"}]], "-", 
+    SqrtBox["n"]}]]}]], "Input",
+ CellChangeTimes->{{3.8466614985125723`*^9, 3.846661511302683*^9}}],
+
+Cell["EJERICIO 2:", "Text",
+ CellChangeTimes->{{3.8466615453575764`*^9, 3.8466615481513047`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"Log", "[", 
+     SuperscriptBox["n", "5"], "]"}], 
+    SqrtBox["n"]], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.846661561488986*^9, 3.8466616097524595`*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.846661613168374*^9}]
+}, Open  ]],
+
+Cell["Log(n) <<Raiz (n)", "Text",
+ CellChangeTimes->{{3.8466616248175774`*^9, 3.846661653935134*^9}}],
+
+Cell["EJERCICIO 3:", "Text",
+ CellChangeTimes->{{3.846661694598668*^9, 3.8466617013677034`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"RecurrenceTable", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"a", "[", 
+        RowBox[{"n", "+", "1"}], "]"}], "\[Equal]", 
+       RowBox[{"2", "+", 
+        FractionBox["1", 
+         RowBox[{"a", "[", "n", "]"}]]}]}], ",", " ", 
+      RowBox[{
+       RowBox[{"a", "[", "1", "]"}], "\[Equal]", "5"}]}], "}"}], ",", 
+    RowBox[{"a", "[", "n", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "25"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8466617432545624`*^9, 3.8466619211105385`*^9}, {
+  3.846661973856738*^9, 3.846661973967763*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxTTMoPSmViYGCQBGIQDQEf7CG0iANUwGHWTBBghPI5HBZ36+16sYgZyhdw
+UNsy/UKcE4wv4qC9NQiIYHwJhzY2nZdP/WF8GQfFvRYuiQEwvoJDVeZeSR84
+X8nBYWvKbn84X8XB5NhjaQRfzaF2hqM5gq/hoD+t3wjB13KYczHWGMHXcYjM
+t0Li6zk0NDog8Q0cbpbZI/ENHWYuQeYbORyYg8w3dpCch8w3cbg3F5lv6vAC
+hW/m8AyFb47Gt0DjW8L5AL+AT1k=
+      "]]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 2.4141958752940655`},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 25.}, {2.414197260585731, 2.4142249664190456`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.8466618779447784`*^9, 3.8466619222148457`*^9, 
+  3.846661974880994*^9}]
+}, Open  ]],
+
+Cell["EJERCICIO 5:", "Text",
+ CellChangeTimes->{{3.847265358826078*^9, 3.84726536273435*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "a", "]"}]], "Input",
+ CellChangeTimes->{{3.847265521487491*^9, 3.847265534447566*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"a", "[", "n", "]"}], "\[Equal]", 
+      RowBox[{
+       RowBox[{"3", 
+        RowBox[{"a", "[", 
+         RowBox[{"n", "-", "1"}], "]"}]}], "+", "n"}]}], ",", " ", 
+     RowBox[{
+      RowBox[{"a", "[", "1", "]"}], "==", "0"}]}], "}"}], ",", " ", 
+   RowBox[{"a", "[", "n", "]"}], ",", " ", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.847265375975149*^9, 3.8472654456558075`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"a", "[", "n", "]"}], "\[Rule]", 
+    RowBox[{
+     FractionBox["1", "12"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "9"}], "+", 
+       RowBox[{"5", " ", 
+        SuperscriptBox["3", "n"]}], "-", 
+       RowBox[{"6", " ", "n"}]}], ")"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8472654411406603`*^9, 3.847265446566802*^9}, 
+   3.847265538480006*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     FractionBox["1", "12"], "*", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "9"}], "+", 
+       RowBox[{"5", "*", 
+        SuperscriptBox["3", "n"]}], "-", 
+       RowBox[{"6", "n"}]}], ")"}]}], 
+    SuperscriptBox["3", "n"]], ",", 
+   RowBox[{"n", "\[Rule]", "Infinity"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8472655440580397`*^9, 3.84726561262796*^9}}],
+
+Cell[BoxData[
+ FractionBox["5", "12"]], "Output",
+ CellChangeTimes->{3.847265613615206*^9}]
+}, Open  ]],
+
+Cell["EJERCICIO 6:", "Text",
+ CellChangeTimes->{{3.8472655993847322`*^9, 3.8472656012451944`*^9}, {
+  3.8472656540042095`*^9, 3.8472656588106384`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"a", "[", "n", "]"}], "\[Equal]", 
+      RowBox[{
+       RowBox[{"a", "[", 
+        RowBox[{"n", "-", "1"}], "]"}], "+", 
+       RowBox[{"a", "[", 
+        RowBox[{"n", "-", "2"}], "]"}]}]}], ",", 
+     RowBox[{
+      RowBox[{"a", "[", "1", "]"}], "\[Equal]", "2"}], ",", " ", 
+     RowBox[{
+      RowBox[{"a", "[", "2", "]"}], "\[Equal]", "3"}]}], "}"}], ",", " ", 
+   RowBox[{"a", "[", "n", "]"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.847265683142895*^9, 3.847265735385987*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"a", "[", "n", "]"}], "\[Rule]", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"3", " ", 
+        RowBox[{"Fibonacci", "[", "n", "]"}]}], "+", 
+       RowBox[{"LucasL", "[", "n", "]"}]}], ")"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.847265737330677*^9}]
+}, Open  ]]
+},
+WindowSize->{1280, 677},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.4 para Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 93, 1, 45, "Text"],
+Cell[CellGroupData[{
+Cell[676, 25, 325, 7, 68, "Input"],
+Cell[1004, 34, 96, 1, 44, "Output"]
+}, Open  ]],
+Cell[1115, 38, 364, 13, 106, "Input"],
+Cell[1482, 53, 97, 1, 45, "Text"],
+Cell[CellGroupData[{
+Cell[1604, 58, 284, 8, 120, "Input"],
+Cell[1891, 68, 70, 1, 44, "Output"]
+}, Open  ]],
+Cell[1976, 72, 101, 1, 45, "Text"],
+Cell[2080, 75, 96, 1, 45, "Text"],
+Cell[CellGroupData[{
+Cell[2201, 80, 657, 18, 105, "Input"],
+Cell[2861, 100, 1726, 40, 348, "Output"]
+}, Open  ]],
+Cell[4602, 143, 93, 1, 45, "Text"],
+Cell[4698, 146, 124, 2, 68, "Input"],
+Cell[CellGroupData[{
+Cell[4847, 152, 491, 14, 68, "Input"],
+Cell[5341, 168, 449, 14, 67, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5827, 187, 450, 14, 116, "Input"],
+Cell[6280, 203, 91, 2, 66, "Output"]
+}, Open  ]],
+Cell[6386, 208, 151, 2, 45, "Text"],
+Cell[CellGroupData[{
+Cell[6562, 214, 602, 17, 68, "Input"],
+Cell[7167, 233, 385, 12, 67, "Output"]
+}, Open  ]]
+}
+]
+*)
+
